@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_comments
-    @comments = Comment.find(:all)
+    @comments = Comment.find(:all, :order => 'id DESC')
     @comment = Comment.new(:url => request.env['REQUEST_URI'])
   end
 end

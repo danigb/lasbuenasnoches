@@ -37,10 +37,11 @@
       <a name="conciertos" /><a href="#conciertos">
       <%= image_tag('aventuras/conciertos.gif', :class => 'hoverable') %></a><br/>
       <div class="semiop">
-      Sábado 18 de Abril - Las Buenas Noches en Madrid<br/>
-      Hora: 22:00<br/>
-      Lugar: Teatro "La Galera" (c/Santo Tomás s/n. Alcalá de Henares)<br/>
-      </div>
+      <b>Madrid - Sábado 18 de Abril - 22h</b><br/>
+      <a href="http://www.teatrostudio.com/">Teatro "La Galera"</a> (c/Santo Tomás s/n. Alcalá de Henares)<br/>
+      <b>Sevilla - Viernes 24 de Abril - 21:30h</b><br/>
+      <a href="http://malandar.net/informacion/">Sala Malandar</a> (C/ Torneo, 43)<br/>
+      </div><br/>
       <a name="videos" /><a href="#videos">
       <%= image_tag('aventuras/videos.gif') %></a><br/>
       <%= link_to 'La plaga', :action => 'la_plaga' %> &nbsp; &nbsp; <%= link_to 'El fin del mundo', :action => 'el_fin_del_mundo' %>
@@ -57,6 +58,7 @@
     <div class="span-12 last" style="margin-top: 30px">
       <% for comment in @comments %>
         <div class="comment semiop">
+          <%= fecha comment.created_at %>
           <%= comment.content %>
         </div>
       <% end %>

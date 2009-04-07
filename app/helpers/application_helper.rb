@@ -7,5 +7,9 @@ module ApplicationHelper
   def timage(name)
     image_tag("web/t_#{name}.gif")
   end
+
+  def fecha(date)
+    date.strftime("%d/%m/%Y")
+  end
   
 end

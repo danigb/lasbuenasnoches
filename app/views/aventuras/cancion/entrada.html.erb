@@ -6,9 +6,20 @@
   <style type="text/css">
     img {border: 0; margin-top: 70px;}
     body { background-color: black; text-align: center;}
+    .conciertos {margin-top: 2em; color: #aaa;}
+    .conciertos a {color: gray; text-decoration: none;}
+    .conciertos h2 {font-size: 120%; margin: 0 0 0.3em 0;}
+    .conciertos h2 a {color: #aaa;}
   </style>
 </head>
 <body>
-  <%= render :partial => '/layouts/ga' %>
   <%= link_to image_tag('marco_lasbuenasnoches.jpg', :size => '898x480'), :action => 'canciones'  %>
+  <div class="conciertos">
+  <h2><a href="/aventuras#conciertos">Próximos conciertos</a></h2>
+    <b>Madrid - Sábado 18 de Abril - 22h</b><br/>
+    <a href="http://www.teatrostudio.com/">Teatro "La Galera"</a> (c/Santo Tomás s/n. Alcalá de Henares)<br/><br/>
+    <b>Sevilla - Viernes 24 de Abril - 21:30h</b><br/>
+    <a href="http://malandar.net/informacion/">Sala Malandar</a> (C/ Torneo, 43)<br/>
+  </div><br/>
+  <%= render :partial => '/layouts/ga' %>
 </body>
