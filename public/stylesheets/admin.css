@@ -1,0 +1,8 @@
+
+
+.page { width: 40em; margin: 2em auto;}
+.page table {width: 100%;}
+th {text-align: left;}
+tr.even {background-color: #efefef;}
+label {font-weight: bold;}
+textarea {width: 100%;}

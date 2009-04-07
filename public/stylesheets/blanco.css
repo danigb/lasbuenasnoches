@@ -1,0 +1,32 @@
+
+img {
+  border: 0;
+}
+
+a { color: white;
+}
+
+div.links {width: 766px;}
+div.links a {display: block; float: left;}
+
+.entrada { width: 766px; margin: 0 auto; }
+
+#messages {position: absolute; margin: -3em 0 0 356px; text-align: right; width: 400px; }
+#messages a {color: black;}
+
+.principal { width: 764px;  height: 362px; }
+.principal .texto { width: 220px; height: 350px; float: right; padding: 60px 30px 0 0;
+  color: white; text-align: right; font: 14px "Garamond" 'serif'; }
+.principal h1 {border: 0; margin: 0 ; font-size: 18px;}
+.principal h2 {border: 0; margin: 5px 0 0 0; font-size: 16px; font-weight: normal;}
+.principal
+.principal .texto a {color: white;}
+h2 a {color: white;}
+
+#player { width: 604px; height: 340px; position: absolute; margin-left: -500px;
+  margin-top: -51px;}
+
+#off {position: absolute; left: 0; top: 0; width: 100px; height: 100px;
+  z-index: 3000; background-color: black; }
+#off a {display: block; color: white;}
+

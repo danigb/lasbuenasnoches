@@ -1,0 +1,22 @@
+<h1>Añadir contenido</h1>
+
+<% form_for(@content) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label 'página' %><br />
+    <%= f.select :page, ['inicio', 'conciertos', 'puntos_de_venta', 'vídeos', 'contacto'] %>
+  </p>
+  <p>
+    <%= f.label 'nombre' %><br />
+    <%= f.select :name, ['contenido', 'arriba'] %>
+  </p>
+  <p>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit "Añadir" %>
+  </p>
+<% end %>
+
+<%= link_to 'Volver', contents_path %>

@@ -1,0 +1,24 @@
+body {
+  background-image: url('../images/aventuras/fondo.jpg');
+  background-repeat: repeat;
+  color: #fff;
+  font-size: 10pt;
+}
+
+.container_16 { margin-top: 3em; margin-bottom: 2em; }
+
+a { color: white; text-decoration: none; }
+
+a:hover { color: gray; }
+
+.hoverable { text-align: center; }
+.hoverable a {   filter: alpha(opacity=60); opacity: 0.6;}
+
+.semiop {filter: alpha(opacity=60); opacity: 0.6;}
+
+.comments { color: white; padding: 5em 0; }
+.comments .comment {border-top: 1px solid white; margin-top: 5px;}
+.comments h1 {color: white; font-size: 120%;}
+.comments .protect {display: none;}
+.comments textarea {background-color: #151517; border: 1px solid white; color: white; width: 470px; height: 100px;}
+.comments a:hover {color: white;}

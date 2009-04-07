@@ -1,0 +1,31 @@
+
+<div class="span-24">
+  <div class="hoverable span-6"><%= cancion_peq '01lapalma-p.gif', '01-la-palma' %></div>
+  <div class="hoverable span-6"><%= cancion_peq '02manuela-p.gif', '02-manuela'  %></div>
+  <div class="hoverable span-6"><%= cancion_peq '03bingo-p.gif', '03-bingo'  %></div>
+  <div class="hoverable span-6 last"><%= cancion_peq '04todaslasescopetas-p.gif', '04-todas-las-escopetas-del-pueblo'  %></div>
+</div>
+<div class="span-24">
+  <div class="hoverable span-6"><%= cancion_peq '05canciontruco-p.gif', '05-cancion-truco'  %></div>
+  <div class="hoverable span-6"><%= cancion_peq '06elmalcamino-p.gif', '06-el-mal-camino'  %></div>
+<div class="hoverable span-6"><%= cancion_peq '07aventurasdomesticas-p.gif', '07-aventuras-domesticas'  %></div>
+  <div class="hoverable span-6 last"><%= cancion_peq '08lomo-p.gif', '08-lomo'  %></div>
+</div>
+<div class="span-24">
+  <div class="hoverable span-6"><%= cancion_peq '09rendicion-p.gif', '09-rendicion'  %></div>
+  <div class="hoverable span-6"><%= cancion_peq '10eldiosinsecto-p.gif', '10-el-dios-insecto'  %></div>
+  <div class="hoverable span-6"><%= cancion_peq '11elsastre-p.gif', '11-el-sastre'  %></div>
+  <div class="hoverable span-6 last "><%= cancion_peq '12laviejaguarderia-p.gif', '12-la-vieja-guarderia'  %></div>
+</div>
+<div class="span-24" style="text-align: center; margin: 3em 0 0 0;">
+  <div class="span-12 hoverable">
+    <a href="http://www.archive.org/download/LasBuenasNoches_AventurasDomesticas/LasBuenasNoches_AventurasDomesticas_vbr_mp3.zip"
+       onClick="javascript: pageTracker._trackPageview('/downloads/ad-fullalbum');">
+      <%= image_tag 'aventuras/descargar.gif' %><br/>
+      disco completo (70MB .zip)
+    </a>
+  </div>
+  <div class="span-12 last hoverable">
+    <%= link_to "#{image_tag 'aventuras/escuchar.gif'}<br/>disco completo en otra ventana", {:controller => 'aventuras/cancion', :action => 'escuchar'}, :target => '_blank' %>
+  </div>
+</div>

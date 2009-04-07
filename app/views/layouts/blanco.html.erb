@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Las buenas noches &mdash; <%= params[:action] %></title>
+    <%= javascript_include_tag 'jquery-1.2.6.min.js' %>
+    <%= javascript_include_tag 'flashembed-0.31.pack.js' %>
+    <%= stylesheet_link_tag 'blanco' %>
+    <%= yield :header %>
+  </head>
+  <body>
+    <%= render :partial => '/layouts/ga' %>
+
+    <div class="entrada">
+      <div class="lasbuenasnoches">
+        <%= link_to image_tag('web/lasbuenasnoches.gif'), :action => 'inicio' %>
+      </div>
+      <div class="principal"
+           style="background-image: url('<%= image_path("web/#{params[:action]}.gif") -%>');"   >
+        <div id="messages"><%= @message %></div>
+        
+        <div class="texto">
+          <%= yield %>
+        </div>
+      </div>
+      <div class="links">
+        <%= link_to timage('inicio'), :action => 'inicio' %>
+        <%= link_to timage('conciertos'), :action => 'conciertos' %>
+        <%= link_to timage('puntos_de_venta'), :action => 'puntos_de_venta' %>
+        <%= link_to timage('videos'), :action => 'videos' %>
+        <%= link_to timage('contacto'), {:action => 'contacto'}, {:class => 'small'} %>
+      </div>
+    </div>
+
+  </body>
+</html>

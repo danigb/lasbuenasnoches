@@ -1,0 +1,23 @@
+<h1>El contenido</h1>
+
+<table>
+  <tr>
+    <th>Página</th>
+    <th>Nombre</th>
+    <th>Contenido</th>
+  </tr>
+
+<% for content in @contents %>
+  <tr class="<%= cycle('even', 'odd') %>" >
+    <td><%=h content.page %></td>
+    <td><%=h content.name %></td>
+    <td><%= content.body %></td>
+    <td><%= link_to 'Modificar', edit_content_path(content) %> | 
+    <%= link_to 'Borrar', content, :confirm => "Te vas a cepillar #{content.name} de #{content.page}. Estas seguroooo!?", :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Añadir contenido', new_content_path %>
