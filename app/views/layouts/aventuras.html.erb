@@ -1,71 +1,73 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>Las buenas noches &mdash; Aventuras dom&eacute;sticas &mdash; <%= params[:action] %></title>
-  <%= javascript_include_tag 'jquery-1.2.6.min.js' %>
-  <%= stylesheet_link_tag 'screen', :media => 'screen, projection'  %>
-  <%= stylesheet_link_tag 'print', :media => 'print'  %>
-  <%= stylesheet_link_tag 'aventuras' %>
-  <%= yield :header %>
-  <!--[if IE]><%= stylesheet_link_tag 'ie', :media => 'screen, projection'  %><![endif]-->
-  <script>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Las buenas noches &mdash; Aventuras dom&eacute;sticas &mdash; <%= params[:action] %></title>
+    <%= javascript_include_tag 'jquery-1.2.6.min.js' %>
+    <%= stylesheet_link_tag 'screen', :media => 'screen, projection'  %>
+    <%= stylesheet_link_tag 'print', :media => 'print'  %>
+    <%= stylesheet_link_tag 'aventuras' %>
+    <%= yield :header %>
+    <!--[if IE]><%= stylesheet_link_tag 'ie', :media => 'screen, projection'  %><![endif]-->
+    <script>
       $(function() {
-          $(".hoverable a").fadeTo(0, 0.6);
-          $(".hoverable a").hover(
-          function() {$(this).fadeTo(600, 1);},
-          function() {$(this).fadeTo(300, 0.6);
-          }
+        $(".hoverable a").fadeTo(0, 0.6);
+        $(".hoverable a").hover(
+        function() {$(this).fadeTo(600, 1);},
+        function() {$(this).fadeTo(300, 0.6);
+        }
       );
       });
-  </script>
-</head>
-<body style="background-color: #141517;">
-<%= render :partial => '/layouts/ga' %>
+    </script>
+  </head>
+  <body style="background-color: #141517;">
+    <%= render :partial => '/layouts/ga' %>
 
-<div class="container">
-  <div class="span-24 last" style="text-align: center" >
-    <%= link_to image_tag('aventuras/lasbuenasnoches.gif', :size => '428x175'), :action => 'canciones' %><br/>
-    <%= link_to image_tag('aventuras/aventurasdomesticas-p.gif', :size => '308x56'),  :action => 'lasbuenasnoches' %><br/>
-    &nbsp;
-  </div>
+    <div class="container">
+      <div class="span-24 last" style="text-align: center" >
+        <%= link_to image_tag('aventuras/lasbuenasnoches.gif', :size => '428x175'), :action => 'canciones' %><br/>
+        <%= link_to image_tag('aventuras/aventurasdomesticas-p.gif', :size => '308x56'),  :action => 'lasbuenasnoches' %><br/>
+        &nbsp;
+      </div>
 
-  <%= yield %>
-  <div class="span-24 last comments">
-    <div class="span-12 hoverable" style="text-align: left">
-      <h1>&nbsp;</h1>
-      <a name="conciertos" /><a href="#conciertos">
-      <%= image_tag('aventuras/conciertos.gif', :class => 'hoverable') %></a><br/>
-      <div class="semiop">
-      <b>Madrid - Sábado 18 de Abril - 22h</b><br/>
-      <a href="http://www.teatrostudio.com/">Teatro "La Galera"</a> (c/Santo Tomás s/n. Alcalá de Henares)<br/>
-      <b>Sevilla - Viernes 24 de Abril - 21:30h</b><br/>
-      <a href="http://malandar.net/informacion/">Sala Malandar</a> (C/ Torneo, 43)<br/>
-      </div><br/>
-      <a name="videos" /><a href="#videos">
-      <%= image_tag('aventuras/videos.gif') %></a><br/>
-      <%= link_to 'La plaga', :action => 'la_plaga' %> &nbsp; &nbsp; <%= link_to 'El fin del mundo', :action => 'el_fin_del_mundo' %>
-    </div>
-    <div class="span-12 last">
-      <h1>Déjanos tu comentario</h1>
-      <% form_for :comment, @comment, :url => {:action => 'add_comment'} do |f| %>
-        <div class="protect"><%= f.text_field :url %><%= text_field_tag :email %></div>
-        <%= f.text_area :content, :class => 'semiop' %>
-        <%= submit_tag 'enviar' %>
-      <% end %>
-    </div>
-    <div class="span-12">&nbsp;</div>
-    <div class="span-12 last" style="margin-top: 30px">
-      <% for comment in @comments %>
-        <div class="comment semiop">
-          <%= fecha comment.created_at %>
-          <%= comment.content %>
+      <%= yield %>
+      <div class="span-24 last comments">
+        <div class="span-12 hoverable" style="text-align: left">
+          <h1>&nbsp;</h1>
+          <a name="conciertos" /><a href="#conciertos">
+          <%= image_tag('aventuras/conciertos.gif', :class => 'hoverable') %></a><br/>
+          <div class="semiop">
+            <b>Cortegana, Huelva - 3 y 4 de Julio</b><br/>
+            <a href="http://www.jamonpop.es/">Festival Jamón Pop</a><br/>
+          </div><br/>
+          <a name="videos" /><a href="#videos">
+          <%= image_tag('aventuras/videos.gif') %></a><br/>
+          <%= link_to 'La plaga', :action => 'la_plaga' %> &nbsp; &nbsp; <%= link_to 'El fin del mundo', :action => 'el_fin_del_mundo' %>
         </div>
-      <% end %>
-      &nbsp;
+        <div class="span-12 last">
+          <h1>Déjanos tu comentario</h1>
+          <% form_for :comment, @comment, :url => {:action => 'add_comment'} do |f| %>
+            <div class="protect"><%= f.text_field :url %><%= text_field_tag :username %></div>
+            <%= f.text_area :content, :class => 'semiop' %>
+            <div class="email">Email
+            <span class="semiop">(Si lo pones, te responderemos. Nunca saldrá publicado.)</span>:<br/>
+            <%= f.text_field :author, :class => 'semiop' %>
+            </div>
+            <%= submit_tag 'enviar' %>
+          <% end %>
+        </div>
+        <div class="span-12">&nbsp;</div>
+        <div class="span-12 last" style="margin-top: 30px">
+          <% for comment in @comments %>
+            <div class="comment semiop">
+              <%= fecha comment.created_at %>
+              <%= comment.content %>
+            </div>
+          <% end %>
+          &nbsp;
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<%= render :partial => '/layouts/ga' %>
-</body>
+    <%= render :partial => '/layouts/ga' %>
+  </body>
 </html>

@@ -20,9 +20,10 @@ class ApplicationController < ActionController::Base
   end
   
   def add_comment
-    if (params[:email].empty?)
+    if (params[:username].empty?)
       comment = Comment.new(params[:comment])
       comment.save
+      WebMailer.deliver_comment_email(comment.content, comment.author)
     end
     redirect_to :back
   end

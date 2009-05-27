@@ -22,3 +22,5 @@ a:hover { color: gray; }
 .comments .protect {display: none;}
 .comments textarea {background-color: #151517; border: 1px solid white; color: white; width: 470px; height: 100px;}
 .comments a:hover {color: white;}
+.comments input[type=text] {background-color: #151517; border: 1px solid white; color: white; }
+ .email {margin-bottom: 0.5em;}
