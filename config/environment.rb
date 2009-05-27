@@ -24,7 +24,7 @@ Rails::Initializer.run do |config|
   # with "rake gems:install" on new installations. config.gem "bj" config.gem
   # "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem "openrain-action_mailer_tls", :lib => "smtp_tls.rb", :source => "http://gems.github.com"
+#  config.gem "openrain-action_mailer_tls", :lib => "smtp_tls.rb", :source => "http://gems.github.com"
   
   # Only load the plugins named here, in the order given. By default, all
   # plugins in vendor/plugins are loaded in alphabetical order. :all can be used

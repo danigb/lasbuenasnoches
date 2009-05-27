@@ -53,7 +53,7 @@
             <span class="semiop">(Si lo pones, te responderemos. Nunca saldrá publicado.)</span>:<br/>
             <%= f.text_field :author, :class => 'semiop' %>
             </div>
-            <%= submit_tag 'enviar' %>
+            <%= submit_tag 'enviar', :disable_with => 'Un segundito...' %>
           <% end %>
         </div>
         <div class="span-12">&nbsp;</div>
