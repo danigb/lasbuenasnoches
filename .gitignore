@@ -1,4 +1,5 @@
 config/smtp_gmail.yml
+config/git.yml
 config/database.yml
 nbproject
 log/*

@@ -1,11 +1,15 @@
 # SOURCES setup users: http://www.viget.com/extend/building-an-environment-from-scratch-with-capistrano-2/
 # setup deploy: http://www.capify.org/getting-started/from-the-beginning/
 
+require 'yaml'
+GIT = YAML.load_file("#{File.dirname(__FILE__)}/git.yml")
+
 default_run_options[:pty] = true
 set :application, "lasbuenasnoches"
 set :deploy_to, "/home/deploy/#{application}"
 set :user, "deploy"
 set :use_sudo, false
+set :scm_passphrase, GIT['password']
 
 set :scm, "git"
 set :repository,  "git@github.com:danigb/lasbuenasnoches.git"
