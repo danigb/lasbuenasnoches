@@ -7,8 +7,8 @@ class WebMailer < ActionMailer::Base
 
   def comment_email(comment, email)
     recipients EMAILS
-    from        "las buenas noches"
-    subject    "han comentado"
+    from        "lasbuenasnoches.com"
+    subject    "Un nuevo comentario"
     sent_on   Time.now
     body(       {:body => comment, :email => email} )
   end
