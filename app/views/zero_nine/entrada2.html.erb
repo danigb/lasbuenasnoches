@@ -1,0 +1,40 @@
+
+<% content_for :header do -%>
+  <style type="text/css">
+    html, body {margin:0; padding:0; width:100%; height:100%; overflow:hidden;}
+    #background{position:absolute; z-index:1; width:100%; height:100%;}
+
+    #center {position:absolute; z-index: 2;
+             top: 50%; left: 50%; width: 0; height: 0; }
+
+    #playground{
+      position: relative; background: transparent url('/images/reweb/fondo.jpg') no-repeat;
+      width: 1315px; height: 917px; margin-left: -657px; margin-top: -459px;
+    }
+    #playground a {display: block; text-indent: -1000px; position: absolute;}
+
+    #aventuras {
+      background: transparent url('/images/reweb/aventuras1.png') no-repeat;
+      width: 498px; height: 271px; left: 200px; top: 200px;
+    }
+    #conciertos {
+      position: absolute; background: transparent url('/images/reweb/conciertos.png') no-repeat;
+      width: 498px; height: 271px; left: 740px; top: 270px;
+    }
+    #videos {
+      position: absolute; background: transparent url('/images/reweb/videos1.png') no-repeat;
+      width: 346px; height: 288px; left: 290px; top: 490px;
+    }
+
+  </style>
+<% end -%>
+
+<img id="background" src="/images/reweb/fondo.jpg" alt="" title="" />
+
+<div id="center">
+  <div id="playground">
+    <a id="aventuras" href="#">aventuras</a>
+    <a id="conciertos" href="#">conciertos</a>
+    <a id="videos" href="/nueva/videos">videos</a>
+  </div>
+</div>

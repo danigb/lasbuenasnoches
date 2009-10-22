@@ -1,0 +1,29 @@
+
+<% content_for :header do -%>
+  <style type="text/css">
+    html, body {
+      margin:0; padding:0; width:100%; height:100%; overflow:hidden;
+      background-color: black;
+    }
+    img {border: 0;}
+    #center {position:absolute; z-index: 2;
+             top: 50%; left: 50%; width: 0; height: 0; }
+
+    #playground{
+      display: block; position: relative; border: 1px solid black;
+      width: 990px; height: 560px; margin-left: -495px; margin-top: -280px;
+    }
+    #playground a {display: block; float: left; width: 305px; height: 172px;
+      margin-left: 15px; margin-bottom: 15px; border: 1px solid black;}
+
+  </style>
+<% end -%>
+
+<div id="center">
+  <div id="playground">
+    <% ['v1_findelmundo', 'v2_plaga', 'v3_jungla', 'v4_tucuman',
+      'v5_tucuman-ext', 'v6_demuerte', 'v7_mediavida', 'v8_eldiadetuboda', 'v9_crimea'].each do |name| %>
+      <%= link_to image_tag("reweb/#{name}.png"), '#', :id => name %>
+    <% end %>
+  </div>
+</div>
