@@ -32,18 +32,6 @@
 
       <%= yield %>
       <div class="span-24 last comments">
-        <div class="span-12 hoverable" style="text-align: left">
-          <h1>&nbsp;</h1>
-          <a name="conciertos" /><a href="#conciertos">
-          <%= image_tag('aventuras/conciertos.gif', :class => 'hoverable') %></a><br/>
-          <div class="semiop">
-            <b>Cortegana, Huelva - 3 y 4 de Julio</b><br/>
-            <a href="http://www.jamonpop.es/">Festival Jamón Pop</a><br/>
-          </div><br/>
-          <a name="videos" /><a href="#videos">
-          <%= image_tag('aventuras/videos.gif') %></a><br/>
-          <%= link_to 'La plaga', :action => 'la_plaga' %> &nbsp; &nbsp; <%= link_to 'El fin del mundo', :action => 'el_fin_del_mundo' %>
-        </div>
         <div class="span-12 last">
           <h1>Déjanos tu comentario</h1>
           <% form_for :comment, @comment, :url => {:action => 'add_comment'} do |f| %>
