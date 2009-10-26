@@ -1,8 +1,12 @@
 
 <% content_for :header do -%>
   <style type="text/css">
+
+    * {margin: 0; padding: 0;}
+
     html, body {
-      margin:0; padding:0; width:100%; height:100%; overflow:hidden;
+      font-family: sans;
+      width:100%; height:100%; overflow:hidden;
       background-color: #999999;
     }
     #center {position:absolute; z-index: 2;
@@ -12,28 +16,114 @@
       position: relative; background: transparent url('/images/reweb/fondo.jpg') no-repeat;
       width: 1315px; height: 917px; margin-left: -657px; margin-top: -459px;
     }
-    #playground a {display: block; text-indent: -1000px; position: absolute;}
+
+    #playground div {display: block; text-indent: -1000px; position: absolute; overflow: hidden;}
 
     #aventuras {
       background: transparent url('/images/reweb/aventuras1.png') no-repeat;
       width: 498px; height: 271px; left: 200px; top: 200px;
     }
-    #conciertos {
-      position: absolute; background: transparent url('/images/reweb/conciertos.png') no-repeat;
-      width: 498px; height: 271px; left: 740px; top: 270px;
-    }
-    #videos {
-      position: absolute; background: transparent url('/images/reweb/videos1.png') no-repeat;
-      width: 346px; height: 288px; left: 290px; top: 490px;
+
+    #fondoaventuras {
+      background: transparent url('/images/reweb/fondoaventuras.png') no-repeat;
+      width: 415px; height: 194px; left: 38px; top: 36px;
+      z-index: 100; overflow: hidden;
     }
 
+    #fondoaventuras a {display: block; position: relative;
+                       width: 100%; height: 100%;}
+
+    #cortinaL {
+      background: transparent url('/images/reweb/cortinaL.png') no-repeat;
+      width: 184px; height: 194px; left: 0px; top: 0px; z-index: 200;
+    }
+
+    #cortinaR {
+      background: transparent url('/images/reweb/cortinaR.png') no-repeat;
+      width: 192px; height: 194px; left: 223px; top: 0px; z-index: 200;
+    }
+
+    #videos {
+      position: absolute; background: transparent url('/images/reweb/videos1.png') no-repeat;
+      width: 345px; height: 287px; left: 740px; top: 270px;
+    }
+
+    #videos a {display: block; position: relative; width: 100%; height: 100%; left: 0; top: 0;}
+
+    #videos.active {background: transparent url('/images/reweb/videos2.png') no-repeat;}
+
+
+
+    #conciertos {
+      position: absolute; background: transparent url('/images/reweb/conciertos1.png') no-repeat;
+      width: 327px; height: 252px;left: 290px; top: 490px;
+    }
+
+    #conciertos #lista {
+      position: relative; display: block; width: 260px; height: 190px; color: white;
+      left: 30px; top: 20px; z-index: 300; text-indent: 0;
+    }
+
+    #lista h1 {font-size: 110%; font-weight: bold; margin-top: 10px;}
+
   </style>
+
+  <script type="text/javascript">
+    $(function () {
+      $("#conciertos").hover(
+      function() {
+        //$("#conciertos").css('background-image', "url(/images/reweb/conciertos2.png)");
+        $("#conciertos #lista").show();
+      },
+      function() {
+        //$("#conciertos").css('background-image', "url(/images/reweb/conciertos1.png)");
+        $("#conciertos #lista").hide();
+      }
+    );
+
+      $("#videos").hover(
+      function() {$("#videos").addClass('active');},
+      function() {$("#videos").removeClass('active');}
+    );
+
+
+      $("#cortinaL").css("left", "0px");
+      $("#cortinaR").css("left", "223px");
+
+      $("#aventuras").hover(
+      function() {
+        $("#cortinaL").stop().animate({left: "-200px"}, 1000);
+        $("#cortinaR").stop().animate({left: "423px"}, 1000);
+      },
+      function() {
+        $("#cortinaL").stop().animate({left: "0px"}, 500);
+        $("#cortinaR").stop().animate({left: "223px"}, 500);
+      }
+    );
+    });
+  </script>
+
 <% end -%>
 
 <div id="center">
   <div id="playground">
-    <a href="#" id="aventuras">aventuras domésticas</a>
-    <a href="#" id="conciertos">conciertos</a>
-    <a href="/nueva/videos" id="videos">videos</a>
+    <div id="aventuras">
+      <div id="fondoaventuras">
+        <div id="cortinaL">&nbsp;</div>
+        <div id="cortinaR">&nbsp;</div>
+        <a href="#">aventuras domésticas</a>
+      </div>
+    </div>
+    <div id="conciertos">
+      <div id="lista" style="display: none;">
+        <h1>Próximos conciertos:</h1>
+
+        <h1>Puntos de venta:</h1>
+
+        <h1>Contacto:</h1>
+        lasbuenasnoches@gmail.com
+      </div>
+    </div>
+    <div id="videos"><a href="#">videos</a></div>
   </div>
 </div>
