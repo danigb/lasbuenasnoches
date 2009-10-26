@@ -31,31 +31,8 @@
       </div>
 
       <%= yield %>
-      <div class="span-24 last comments">
-        <div class="span-12 last">
-          <h1>Déjanos tu comentario</h1>
-          <% form_for :comment, @comment, :url => {:action => 'add_comment'} do |f| %>
-            <div class="protect"><%= f.text_field :url %><%= text_field_tag :username %></div>
-            <%= f.text_area :content, :class => 'semiop' %>
-            <div class="email">Email
-            <span class="semiop">(Si lo pones, te responderemos. Nunca saldrá publicado.)</span>:<br/>
-            <%= f.text_field :author, :class => 'semiop' %>
-            </div>
-            <%= submit_tag 'enviar', :disable_with => 'Un segundito...' %>
-          <% end %>
-        </div>
-        <div class="span-12">&nbsp;</div>
-        <div class="span-12 last" style="margin-top: 30px">
-          <% for comment in @comments %>
-            <div class="comment semiop">
-              <%= fecha comment.created_at %>
-              <%= comment.content %>
-            </div>
-          <% end %>
-          &nbsp;
-        </div>
-      </div>
-    </div>
+
+    <%= render :partial => '/layouts/comments' %>
     <%= render :partial => '/layouts/ga' %>
   </body>
 </html>

@@ -13,7 +13,10 @@ class ZeroNineController < ApplicationController
   }
 
   def entrada
-    
+  end
+
+  def videos
+    load_comments
   end
 
   def video
