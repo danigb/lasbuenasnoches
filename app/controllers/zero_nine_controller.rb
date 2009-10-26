@@ -12,6 +12,10 @@ class ZeroNineController < ApplicationController
       'De muerte.flv','Media vida tractor final b.flv','El dia de tu boda chill out final.flv']
   }
 
+
+  after_filter {|c| c.cache_page}
+
+
   def entrada
   end
 
