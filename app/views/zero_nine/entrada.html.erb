@@ -48,7 +48,7 @@
       width: 345px; height: 287px; left: 740px; top: 270px;
     }
 
-    #videos a {display: block; position: relative; width: 100%; height: 100%; left: 0; top: 0;}
+    #tovideos {display: block; position: relative; width: 100%; height: 100%; left: 0; top: 0;}
 
     #videos.active {background: transparent url('/images/reweb/videos2.png') no-repeat;}
 
@@ -69,6 +69,7 @@
   </style>
 
   <script type="text/javascript">
+    $("<img>").attr("src", "/images/reweb/videos2.png");
     $(function () {
       $("#conciertos").hover(
       function() {
@@ -111,7 +112,7 @@
       <div id="fondoaventuras">
         <div id="cortinaL">&nbsp;</div>
         <div id="cortinaR">&nbsp;</div>
-        <a href="#">aventuras domésticas</a>
+        <a href="/aventuras">aventuras domésticas</a>
       </div>
     </div>
     <div id="conciertos">
@@ -124,6 +125,6 @@
         lasbuenasnoches@gmail.com
       </div>
     </div>
-    <div id="videos"><a href="#">videos</a></div>
+    <div id="videos"><a id="tovideos" href="/videos">videos</a></div>
   </div>
 </div>

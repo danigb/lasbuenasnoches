@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Las buenas noches &mdash; <%= params[:path] %></title>
+    <%= javascript_include_tag 'jquery-1.2.6.min.js' %>
+    <%= javascript_include_tag 'flashembed-0.31.pack.js' %>
+    <style type="text/css">
+      body { background-color: #000; text-align: center; }
+      #player { width: 682px; height: 384px; margin: 40px auto; }
+      #central {position:absolute; z-index: 2;
+                top: 50%; left: 50%; width: 0; height: 0; }
+      #center {height: 520px; width: 690px;
+               margin-top: -300px; margin-left: -345px;}
+      #volver {
+        display: block; height: 30px; opacity: 0; filter: alpha(opacity=0)
+        width: 690px; padding-left: 500px; overflow: hidden; text-indent: -10000px;
+        background: transparent url('/images/reweb/volver.png') 300px 0 no-repeat;
+      }
+
+      #volver:hover {opacity: 1;filter: alpha(opacity=100)}
+    </style>
+  </head>
+  <body>
+    <div id="central">
+      <div id="center">
+        <div id="player"></div>
+        <a id="volver" href="/videos">videos</a>
+      </div>
+    </div>
+    <script type="text/javascript">
+      // place Flowplayer to our DIV
+      flashembed("player", "/swf/FlowPlayerLight.swf", {
+
+        config: {
+          controlsOverVideo: 'ease', controlBarBackgroundColor: -1, showMenu: false,
+          showScrubber: true, showVolumeSlider: true, controlBarGloss: 'none',
+          showMuteVolumeButton: false, showFullScreenButton: true,
+          useNativeFullScreen:true, initialVolumePercentage: 100, autoPlay: false,
+          showMenu: false, progressBarColor1 : '#000', progressBarColor2: '#000',
+          baseURL: 'http://www.danielcuberta.com/videos/videos/',
+          videoFile: '<%= @video %>',
+          initialScale: 'fit'
+        }
+      });
+    </script>
+    <%= render :partial => '/layouts/ga' %>
+  </body>
+</html>
