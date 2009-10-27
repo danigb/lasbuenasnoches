@@ -26,10 +26,11 @@
 
     <div class="container">
       <div class="span-24 last" style="text-align: center" >
-        <%= link_to image_tag('aventuras/lasbuenasnoches.gif', :size => '428x175'), '/' %><br/>
+        <%= link_to image_tag('aventuras/lasbuenasnoches.gif', :size => '428x175'), (current_page?('/aventuras') ? '/' : '/aventuras') %><br/>
         <%= link_to image_tag('aventuras/aventurasdomesticas-p.gif', :size => '308x56'),  :action => 'lasbuenasnoches' %><br/>
         &nbsp;
       </div>
+
 
       <%= yield %>
     </div>
