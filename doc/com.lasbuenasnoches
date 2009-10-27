@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+  ServerName lasbuenasnoches.com
+  ServerAlias www.lasbuenasnoches.com
+  DocumentRoot "/home/deploy/lasbuenasnoches/current/public"
+  RailsEnv production
+  RewriteEngine On
+
+  RewriteRule ^/$ /cache/index.html [QSA]
+  RewriteRule ^([^.]+)$ /cache/$1.html [QSA]
+  <Directory /home/deploy/lasbuenasnoches/current/public/>
+    Order allow,deny
+    Allow from all
+  </Directory>
+</VirtualHost>
+

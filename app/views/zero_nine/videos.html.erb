@@ -2,48 +2,54 @@
 <% content_for :header do -%>
   <style type="text/css">
 
-    html, body {
-      font-family:Helvetica, Arial, sans-serif;
-      font-size: 12px;
-      margin:0; padding:0; width:100%;
-      background-color: black;
-    }
+          html, body {
+            font-family:Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            margin:0; padding:0; width:100%;
+            background-color: black;
+          }
 
-    a {color: white; text-decoration: none;}
+          a {color: white; text-decoration: none;}
 
-    img {border: 0;}
-    #center {position:absolute; z-index: 2;
-             top: 50%; left: 50%; width: 0; height: 0; }
+          img {border: 0;}
+          #center {position:absolute; z-index: 2;
+            top: 50%; left: 50%; width: 0; height: 0; }
 
-    #playground{
-      display: block; position: relative; border: 1px solid black;
-      width: 990px; height: 560px; margin-left: -495px; margin-top: -280px;
-    }
-    #playground a {display: block; float: left; width: 305px; height: 172px;
-                   margin-left: 15px; margin-bottom: 15px; border: 1px solid black;}
-    #volver {
-      display: block; height: 30px; opacity: 0; filter: alpha(opacity=0)
-        width: 690px; padding-left: 500px; overflow: hidden; text-indent: -10000px;
-      background: transparent url('/images/reweb/volver.png') 300px 0 no-repeat;
-    }
+          #playground{
+            display: block; position: relative; border: 1px solid black;
+            width: 990px; height: 560px; margin-left: -495px; margin-top: -280px;
+          }
+          #playground a {display: block; float: left; width: 305px; height: 172px;
+            margin-left: 15px; margin-bottom: 15px; border: 1px solid black;}
+          #volver {
+            display: block; height: 30px; opacity: 0; filter: alpha(opacity=0)
+            width: 690px; padding-left: 500px; overflow: hidden; text-indent: -10000px;
+            background: transparent url('/images/reweb/volver.png') 300px 0 no-repeat;
+          }
 
-    #volver:hover {opacity: 1;filter: alpha(opacity=100)}
+          #volver:hover {opacity: 1;filter: alpha(opacity=100)}
 
-    .comments { clear:both; width: 420px; margin: 900px auto 2em auto; color: white; padding: 5em 0;
-                filter: alpha(opacity=70); opacity: 0.7;}
-    .comments input[type=submit] {border: 1px solid white; background-color: white;
-                                  filter: alpha(opacity=60); opacity: 0.6;}
-    .comments input[type=submit]:hover {border: 1px solid white; background-color: white;
-                                        filter: alpha(opacity=100); opacity: 1;}
-    .comments .comment {border-top: 1px solid white; margin-top: 5px;}
-    .comments h1 {color: white; font-size: 120%;}
-    .comments .protect {display: none;}
-    .comments textarea { color: white; background-color: black; padding: 5px;
-                        border: 1px solid white; color: white; width: 410px; height: 100px;}
-    .comments a:hover {color: white;}
-    .comments input[type=text] {background-color:black; border: 1px solid white; color: white; }
-    .email {margin-bottom: 0.5em;}
+          .comments { clear:both; width: 420px; margin: 900px auto 2em auto; color: white; padding: 5em 0;
+            filter: alpha(opacity=70); opacity: 0.7;}
+          .comments input[type=submit] {border: 1px solid white; background-color: white;
+            filter: alpha(opacity=60); opacity: 0.6;}
+          .comments input[type=submit]:hover {border: 1px solid white; background-color: white;
+            filter: alpha(opacity=100); opacity: 1;}
+          .comments .comment {border-top: 1px solid white; margin-top: 5px;}
+          .comments h1 {color: white; font-size: 120%;}
+          .comments .protect {display: none;}
+          .comments textarea { color: white; background-color: black; padding: 5px;
+            border: 1px solid white; color: white; width: 410px; height: 100px;}
+          .comments a:hover {color: white;}
+          .comments input[type=text] {background-color:black; border: 1px solid white; color: white; }
+          .email {margin-bottom: 0.5em;}
   </style>
+
+  <script type="text/javascript">
+    $(function() {
+      $("#cmts").load('/comments');
+    });
+  </script>
 <% end -%>
 
 <div id="center">
@@ -54,4 +60,4 @@
   </div>
   <a id="volver" href="/">videos</a>
 </div>
-<%= render :partial => '/layouts/comments.html' %>
+<div id="cmts"></div>

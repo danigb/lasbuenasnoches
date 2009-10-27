@@ -1,5 +1,4 @@
 class Aventuras::CancionController < ApplicationController
-  before_filter :load_comments
   layout 'aventuras'
 
 

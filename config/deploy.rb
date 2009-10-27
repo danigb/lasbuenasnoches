@@ -31,6 +31,8 @@ namespace :config do
     %w[database.yml smtp_gmail.yml].each do |f|
       run "ln -nsf #{shared_path}/config/#{f} #{release_path}/config/#{f}"
     end
+    run "ln -sf #{shared_path}/cache #{release_path}/public/cache"
+
   end
 end
 
@@ -45,4 +47,27 @@ namespace :deploy do
     desc "#{t} task is a no-op with mod_rails"
     task t, :roles => :app do ; end
   end
+end
+
+namespace :backup do
+  desc "Backup the remote production database"
+  task :mysql, :roles => :db, :only => { :primary => true } do
+    filename = "#{application}.dump.#{Time.now.to_i}.sql.bz2"
+    file = "/tmp/#{filename}"
+    on_rollback { delete file }
+    db = YAML::load(ERB.new(IO.read(File.join(File.dirname(__FILE__), 'database.yml'))).result)['production']
+    run "mysqldump -u #{db['username']} --password=#{db['password']} #{db['database']} | bzip2 -c > #{file}"  do |ch, stream, data|
+      puts data
+    end
+    `mkdir -p #{File.dirname(__FILE__)}/../backups/`
+    get file, "backups/#{filename}"
+    `gpg -c #{File.dirname(__FILE__)}/../backups/#{filename}`
+    `rm #{File.dirname(__FILE__)}/../backups/#{filename}`
+    # delete file
+  end
+end
+
+desc "Backup the database before running migrations"
+task :before_migrate do
+  backup
 end

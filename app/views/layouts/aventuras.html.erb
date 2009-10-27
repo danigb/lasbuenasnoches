@@ -17,6 +17,7 @@
         function() {$(this).fadeTo(300, 0.6);
         }
       );
+        $("#cmts").load('/comments');
       });
     </script>
   </head>
@@ -31,8 +32,9 @@
       </div>
 
       <%= yield %>
+    </div>
 
-    <%= render :partial => '/layouts/comments' %>
+    <div id="cmts"></div>
     <%= render :partial => '/layouts/ga' %>
   </body>
 </html>
