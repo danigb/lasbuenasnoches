@@ -11,5 +11,7 @@ module ApplicationHelper
   def fecha(date)
     date.strftime("%d/%m/%Y")
   end
+
+
   
 end

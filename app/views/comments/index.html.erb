@@ -1,7 +1,7 @@
 <div class="comments">
   <h1>Déjanos tu comentario</h1>
-  <% form_for :comment, @comment, :url => add_comment_path do |f| %>
-    <div class="protect"><%= f.text_field :url %><%= text_field_tag :username %></div>
+  <% form_for :comment, @comment, :url => '/add_comment'  do |f| %>
+    <div class="protect"><%= text_field_tag :url, current_path %><%= text_field_tag :username %></div>
     <%= f.text_area :content, :class => 'semiop' %>
     <div class="email">Email
       <span class="semiop">(Si lo pones, te responderemos. Nunca saldrá publicado.)</span>:<br/>
@@ -17,3 +17,4 @@
   <% end %>
   &nbsp;
 </div>
+

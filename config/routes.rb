@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.aventuras '/aventuras', :controller => 'aventuras/cancion', :action => 'canciones'
   map.videos '/videos', :controller => 'zero_nine', :action => 'videos'
   map.comments '/comments', :controller => 'comments', :action => 'index'
-  map.add_comment '/add_comment', :controller => 'comments', :action => 'add_comment'
+  map.add_comment '/add_comment', :controller => 'comments', :action => 'create'
   map.connect 'aventuras/cancion/:action', :controller => 'aventuras/cancion'
   map.connect ':action', :controller => 'aventuras/cancion'
   

@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 
 
   def create
-    if (params[:username].empty?)
+    if (params[:username].blank?)
       comment = Comment.new(params[:comment])
       comment.save
       if RAILS_ENV == 'production'
