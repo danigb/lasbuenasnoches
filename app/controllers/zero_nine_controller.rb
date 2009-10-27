@@ -20,7 +20,6 @@ class ZeroNineController < ApplicationController
   end
 
   def videos
-    load_comments
   end
 
   def video
