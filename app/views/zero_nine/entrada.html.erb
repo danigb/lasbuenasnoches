@@ -10,6 +10,13 @@
                   background-color: #999999;
                   color: gray;
                 }
+
+                #loading {
+                  font-family: monospace;
+                  position: fixed; top: 0; left: 0; padding: 0.5em 1em;
+                  color: yellow;
+                }
+
                 #center {position:absolute; z-index: 2;
                   top: 50%; left: 50%; width: 0; height: 0; }
 
@@ -67,12 +74,13 @@
                 }
 
                 #conciertos #lista {
+                  font-family: "Garamond",  serif;
                   position: relative; display: block; width: 260px; height: 200px; color: white;
-                  left: 30px; top: 20px; z-index: 300; text-indent: 0;
+                  left: 30px; top: 20px; z-index: 300; text-indent: 0; letter-spacing: 1px;
                 }
 
                 #lista h1 {font-size: 100%; font-weight: bold; margin-top: 10px;}
-                #lista p {font-size: 80%; margin-top: 2px;}
+                #lista p {font-size: 80%; margin: 2px; display: block;}
 
   </style>
 
@@ -118,6 +126,7 @@
     });
 
     $(window).load(function() {
+      $("#loading").hide();
       $("#playground").fadeIn();
     });
     //]]>
@@ -125,8 +134,9 @@
 
 <% end -%>
 
+<div id="loading">las buenas noches... cargando...</div>
+
 <div id="center">
-  las buenas noches ... cargando ...
   <div id="playground" style="display: none;">
     <div id="aventuras">
       <div id="fondoaventuras">
