@@ -8,6 +8,7 @@
                   font-family: sans;
                   width:100%; height:100%; overflow:hidden;
                   background-color: #999999;
+                  color: gray;
                 }
                 #center {position:absolute; z-index: 2;
                   top: 50%; left: 50%; width: 0; height: 0; }
@@ -71,7 +72,7 @@
                 }
 
                 #lista h1 {font-size: 100%; font-weight: bold; margin-top: 10px;}
-                #lista p {font-size: 60%; margin-top: 2px;}
+                #lista p {font-size: 80%; margin-top: 2px;}
 
   </style>
 
@@ -84,7 +85,7 @@
       $("#conciertos").hover(
       function() {
         //$("#conciertos").css('background-image', "url(/images/reweb/conciertos2.png)");
-        $("#conciertos #lista").show();
+        $("#conciertos #lista").fadeIn();
       },
       function() {
         //$("#conciertos").css('background-image', "url(/images/reweb/conciertos1.png)");
@@ -125,6 +126,7 @@
 <% end -%>
 
 <div id="center">
+  las buenas noches ... cargando ...
   <div id="playground" style="display: none;">
     <div id="aventuras">
       <div id="fondoaventuras">
@@ -136,8 +138,6 @@
     </div>
     <div id="conciertos">
       <div id="lista" style="display: none;">
-        <h1>Próximos conciertos:</h1>
-
         <h1>Puntos de venta:</h1>
         <p>
           <b>La Fuga Librerias</b><br/>c/ Conde de Torrejón, 4, Acc.<br/>
@@ -149,7 +149,7 @@
           28012 Madrid<br/> Teléfono 91 5320928
         </p>
         <h1>Contacto:</h1>
-        lasbuenasnoches@gmail.com
+        <p>lasbuenasnoches@gmail.com</p>
       </div>
     </div>
     <div id="videos"><a id="tovideos" href="/videos">videos</a></div>
