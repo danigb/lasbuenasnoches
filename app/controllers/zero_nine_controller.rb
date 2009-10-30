@@ -8,7 +8,7 @@ class ZeroNineController < ApplicationController
       'tucuman', 'tucuman-exterior',
       'de-muerte', 'media-vida', 'el-dia-de-tu-boda'],
     :files => ['el fin del mundo b1.flv', 'la plaga b1.flv','La jungla final.flv',
-      'Tucuman indoor.flv','Tucuman chil out final.flv',
+      'tucuman indoor.flv','Tucuman chil out final.flv',
       'De muerte.flv','Media vida tractor final b.flv','El dia de tu boda chill out final.flv']
   }
 
