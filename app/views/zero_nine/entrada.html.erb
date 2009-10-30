@@ -114,13 +114,17 @@
       }
     );
     });
+
+    $(window).load(function() {
+      $("#playground").fadeIn();
+    });
     //]]>
   </script>
 
 <% end -%>
 
 <div id="center">
-  <div id="playground">
+  <div id="playground" style="display: none;">
     <div id="aventuras">
       <div id="fondoaventuras">
         <div id="aventurasdomesticas" style="display: none;">&nbsp;</div>
