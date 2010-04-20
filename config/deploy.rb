@@ -49,9 +49,9 @@ namespace :deploy do
   end
 end
 
-namespace :backup do
+namespace :mysql do
   desc "Backup the remote production database"
-  task :mysql, :roles => :db, :only => { :primary => true } do
+  task :backup, :roles => :db, :only => { :primary => true } do
     filename = "#{application}.dump.#{Time.now.to_i}.sql.bz2"
     file = "/tmp/#{filename}"
     on_rollback { delete file }

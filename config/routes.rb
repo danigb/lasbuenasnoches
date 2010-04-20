@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'zero_nine', :action => 'entrada'
+  map.contacto 'contacto', :controller => 'zero_nine', :action => 'contacto'
   map.connect '/video/*path', :controller => 'zero_nine', :action => 'video'
   map.aventuras '/aventuras', :controller => 'aventuras/cancion', :action => 'canciones'
   map.videos '/videos', :controller => 'zero_nine', :action => 'videos'

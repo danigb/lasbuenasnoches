@@ -1,0 +1,70 @@
+<% content_for :header do %>
+  <style type="text/css">
+    /*
+  Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+  Code licensed under the BSD License:
+  http://developer.yahoo.net/yui/license.txt
+  version: 2.6.0
+    */
+    html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}del,ins{text-decoration:none;}
+
+    html {font-family: 'Times New Roman', 'Times', 'Garamond', sans-serif; background-color: #0d0d0d; color: #feeeb2;}
+    #page {width: 1000px; margin: 10px auto;}
+    #maquina {display: block; float: left;}
+    #content {width: 500px; float: left;}
+    h1 {display: block; text-indent: -1000px; overflow: hidden; width: 500px; margin-top: 30px;
+        background: url('/images/reweb/headers.png') no-repeat;}
+    h1#contacto {height: 50px; background-position: 0 -10px;}
+    h1#venta {height: 90px; background-position: 0 -180px;}
+    h1#conciertos {height: 100px; background-position: 0 -450px;}
+    #mail {display: block; font-size: 30px; text-align: center; padding-bottom: 0em;}
+    .venta {width: 100%; overflow: hidden;}
+    .column {width: 45%; float: left; padding-right: 5%; text-align: right;}
+    .column.right {width: 35%; text-align: left; padding-left: 5%; border-left: 1px solid #efefef;}
+    .point {line-height: 1.4em; padding-bottom: 15px;}
+    .point h2 {color: #fff7da; font-size: 110%;}
+    .conciertos {text-align: center; margin-top: 20px; font-size: 120%; font-weight: lighter;}
+    .conciertos p {margin: 10px 0;}
+    .conciertos label {color: #fff7da;}
+  </style>
+<% end %>
+
+<div id="page">
+  <a href="/">
+    <img id="maquina" src="/images/reweb/lamaquina.jpg" alt="las buenas noches en acción" />
+  </a>
+  <div id="content">
+    <h1 id="contacto">Contacto</h1>
+    <div id="mail">contacto@lasbuenasnoches.com</div>
+    <h1 id="venta">Venta de discos</h1>
+    <div class="venta">
+      <div class="column">
+        <div class="point">
+          <h2>Traficantes de sueños</h2>
+          c/ Embajadores 35, Local 6<br/>
+          28012 Madrid<br/>
+          Tlf: 91 532 09 28<br/>
+        </div>
+      </div>
+      <div class="column right">
+        <div class="point">
+          <h2>La fuga librerías</h2>
+          c/ Conde de Torrejón 4<br/>
+          41003 Sevilla<br/>
+          Tlf: 954 382 340
+        </div>
+        <div class="point">
+          <h2>Librería La Araña</h2>
+          c/ Amargura 8, Local A<br/>
+          41003 Sevilla<br/>
+          Tlf: 954 380 679
+        </div>
+      </div>
+    </div>
+    <h1 id="conciertos">Próximos conciertos</h1>
+    <div class="conciertos">
+      <p><label>29 de Abril</label> &#149; Vera (Almería)</p>
+      <p><label>30 de Abril</label> &#149; Rincón de la Victoria (Málaga)</p>
+    </div>
+  </div>
+</div>

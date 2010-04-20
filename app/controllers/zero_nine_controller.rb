@@ -22,6 +22,10 @@ class ZeroNineController < ApplicationController
   def videos
   end
 
+  def contacto
+    
+  end
+
   def video
     path = params[:path].join;
     index = VIDEOS[:names].index(path)

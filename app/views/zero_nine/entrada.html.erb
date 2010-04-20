@@ -75,20 +75,11 @@
       width: 327px; height: 252px;left: 290px; top: 490px;
     }
 
-    #conciertos #lista {
-      font-family: "Garamond",  serif;
-      position: relative; display: block; width: 260px; height: 200px; color: white;
-      left: 30px; top: 20px; z-index: 300; text-indent: 0; letter-spacing: 1px;
-    }
-
-    #lista h1 {font-size: 100%; font-weight: bold; margin-top: 10px;}
-    #lista p {font-size: 80%; margin: 2px; display: block;}
-
-
     #lista {
-      position: relative; display: block; width: 260px; height: 200px; color: white;
-      left: 30px; top: 20px; z-index: 300; text-indent: 0;
+      position: relative; display: block; width: 327px; height: 252px; color: white;
+      left: 23px; top: 20px; z-index: 300; text-indent: 0; letter-spacing: 1px;
     }
+    #lista.active {background: transparent url('/images/reweb/contacto.png') no-repeat;}
 
     #content {display: block; width: 260px; height: 200px;}
 
@@ -128,20 +119,7 @@
       </div>
     </div>
     <div id="conciertos">
-      <div id="lista" style="display: none;">
-        <h1>Puntos de venta:</h1>
-        <p>
-          <b>La Fuga Librerias</b><br/>c/ Conde de Torrejón, 4, Acc.<br/>
-          41003 · Sevilla<br/>Teléfono: 954 38 23 40
-        </p>
-        <p>
-          <b>Librería Traficante de Sueños</b><br/>
-          c/Embajadores 35, Local 6.<br/>
-          28012 Madrid<br/> Teléfono 91 5320928
-        </p>
-        <h1>Contacto:</h1>
-        <p>lasbuenasnoches@gmail.com</p>
-      </div>
+      <a id="lista"  href="/contacto" />
     </div>
     <div id="videos"><a id="tovideos" href="/videos">videos</a></div>
   </div>

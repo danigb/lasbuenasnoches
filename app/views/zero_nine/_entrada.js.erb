@@ -8,12 +8,8 @@
 
   $(function () {
     $("#conciertos").hover(
-    function() {
-      $("#lista").fadeIn(100);
-    },
-    function() {
-      $("#lista").hide();
-    }
+    function() {$("#lista").addClass('active')},
+    function() {$("#lista").removeClass('active')}
   );
 
     $("#videos").hover(
