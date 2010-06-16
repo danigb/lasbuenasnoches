@@ -28,10 +28,18 @@
     .conciertos label {color: #fff7da;}
     .conciertos a {color: #feeeb2;}
   </style>
+  <script type="text/javascript">
+    $(window).load(function() {
+      var location = document.location.toString();
+      if (location.charAt(location.length - 1) == '/') {
+        
+      }
+    });
+  </script>
 <% end %>
 
 <div id="page">
-  <a href="/">
+  <a href="/entrada">
     <img id="maquina" src="/images/reweb/lamaquina.jpg" alt="las buenas noches en acción" />
   </a>
   <div id="content">
@@ -64,16 +72,37 @@
     </div>
     <h1 id="conciertos">Próximos conciertos</h1>
     <div class="conciertos">
-      <p><label>29 de Abril</label> &#149; 
-        21h <a href="http://maps.google.es/maps?f=q&source=embed&hl=es&geocode=&q=vera+calle+radio+nacional++&sll=36.781221,-2.244861&sspn=1.834623,2.658691&ie=UTF8&hq=&hnear=Calle+de+Radio+Nacional,+04620+Vera,+Almer%C3%ADa,+Andaluc%C3%ADa&ll=37.256225,-1.863985&spn=0.007336,0.010386&t=h&z=14">Cine Teatro Municipal Regio</a><br/>
-        c/ Radio Nacional<br/>
-        Vera (Almería)
+      <p><label>6 de Julio</label> &#149;
+        21:30h <a href="#">Unia, Universidad Int. Andalucia</a><br/>
+        Lugar por determinar.<br/>
+        Málaga
       </p>
-      <p><label>30 de Abril</label> &#149; 
-        21h <a href="http://maps.google.es/maps?f=q&source=s_q&hl=es&geocode=&q=Rinc%C3%B3n+de+la+Victoria,+plaza+gloria+fuertes&sll=36.713843,-4.27557&sspn=0.091785,0.135441&g=Rinc%C3%B3n+de+la+Victoria&ie=UTF8&hq=plaza+gloria+fuertes&hnear=Rinc%C3%B3n+de+la+Victoria&ll=37.035447,-3.986664&spn=0.703789,1.083527&t=h&z=10&iwloc=A&cid=9201774005776673201">Sala Las Musas</a><br/>
-        Plz. Gloria Fuertes (Cala del Moral) s/n<br/>
-        Rincón de la Victoria (Málaga)
+      <p><label>8 de Julio</label> &#149;
+        21h <a href="http://maps.google.com/maps?f=q&source=s_q&hl=es&geocode=&q=Plaza+Mayor,+Huercal+Overa,+Espa%C3%B1a+42987&sll=37.387772,-1.94197&sspn=0.012889,0.017273&ie=UTF8&hq=&hnear=Calle+Mayor,+04600+Hu%C3%A9rcal-Overa,+Almer%C3%ADa,+Andaluc%C3%ADa,+Espa%C3%B1a&ll=37.387754,-1.941833&spn=0.103113,0.138187&t=h&z=13">Huércal Olvera</a><br/>
+        Plaza Mayor.<br/>
+        Huércal Overa (Almería)
       </p>
+      <p><label>9 de Julio</label> &#149;
+        22:30h <a href="http://maps.google.com/maps?f=q&source=s_q&hl=es&q=Castillo+Guardias+Viejas,+04700+El+Ejido,+Almer%C3%ADa,+AL,+Espa%C3%B1a&sll=36.70207,-2.850446&sspn=0.013006,0.017273&ie=UTF8&cd=1&geocode=FXYHMAIdcoHU_w&split=0&doflg=ptk&hq=&hnear=Castillo+Guardias+Viejas,+04700+El+Ejido,+Almer%C3%ADa,+AL,+Espa%C3%B1a&ll=36.702008,-2.850266&spn=0.208097,0.276375&t=h&z=12">El Ejido</a><br/>
+        Castillo de Guardias Viejas<br/>
+        El Ejido (Almería)
+      </p>
+      <p><label>10 de Julio</label> &#149;
+        22h <a href="http://maps.google.com/maps?f=q&source=s_q&hl=es&geocode=&q=Calle+del+Paseo+Mar%C3%ADtimo,+04770+Adra,+Espa%C3%B1a&sll=37.188455,-1.817728&sspn=0.006462,0.008637&doflg=ptk&ie=UTF8&hq=&hnear=Calle+del+Paseo+Mar%C3%ADtimo,+04770+Adra,+Almer%C3%ADa,+Andaluc%C3%ADa,+Espa%C3%B1a&ll=36.745229,-3.016133&spn=0.006499,0.008637&t=h&z=17">Adra</a><br/>
+        Paseo Marítimo<br/>
+        Adra (Almería)
+      </p>
+    </div>
+
+    <div id="postload" style="display: none;">
+      <img src="/images/reweb/fondo.jpg" alt="preload" />
+      <img src="/images/reweb/aventuras1.png" alt="preload" />
+      <img src="/images/reweb/aventuras4.png" alt="preload" />
+      <img src="/images/reweb/cortinaL.png"  alt="preload" />
+      <img src="/images/reweb/cortinaR.png"  alt="preload" />
+      <img src="/images/reweb/videos1.png"  alt="preload" />
+      <img src="/images/reweb/videos2.png"  alt="preload" />
+      <img src="/images/reweb/conciertos1.png"  alt="preload" />
     </div>
   </div>
 </div>
